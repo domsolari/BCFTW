@@ -65,7 +65,7 @@ class BlockChain:
         while new_hash[:required_len] != prev_hash[:required_len]:
             # Here we check whether the current Hash starts with 5 zeros, if this is not the case,
             # we use the increase_nonce method from Block.py and hash the current block with a new
-            # nonce again. This will be done as long as the hash starts not with 5 zeros. This process
+            # nonce again. This will be done until the hash starts with 5 zeros. This process
             # is called mining
             current_block.increase_nonce()
             new_hash = current_block.get_hash()
